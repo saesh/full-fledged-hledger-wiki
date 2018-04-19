@@ -1,12 +1,16 @@
-At the top level, there would be a number of yearly journals, one per year (`2014.journal`, `2015.journal`, etc).
+> If you are just starting with hledger, this section could overwhelm you. Skip it and return later after you've read first couple of sections. 
 
-Each of them will `!include` a bunch of files from `./import/{statement source}/journal/` subdirectories and will also contain all manual transactions for the given year.
+I prefer to keep all files in a single directory, which will contain a bunch of subdirectories to keep less frequently used files out of sight.
 
-Script `export.sh` is used to generate a bunch of reports in the `export` subdirectory, which contains [Shake](http://shakebuild.com/) script `./export/export.sh` that drives the whole process.
+At the top level there would be a number of yearly journal files, one per year (`2014.journal`, `2015.journal`, etc).
 
-All source statements go into `./import/{statement source}/in`, then they are converted to proper CSV files and put into `./import/{statement source}/csv` and generated journal files go into `./import/{statement source}/journal`. I usually have `./import/{statement source}/convert.sh` that allows you to re-generate all files in `./journal` from the source files held in `./in`.
+Each of them will `!include` a bunch of files from import subdirectories (`./import/{statement source}/journal/`) and will also contain all manually-entered transactions for the given year.
 
-Typical filesystem tree will look like this:
+Script `export.sh` is used to generate a bunch of reports in the `./export` subdirectory. Actual generation is driven by `./export/export.hs` which is a [Shake](http://shakebuild.com/) build system script.
+
+All source statements go into `./import/{statement source}/in`. Each source of statements will have a small shell scripts `./import/{statement source}/convert.sh` that will converted raw input files proper CSV files and put them into `./import/{statement source}/csv`. These will be coverted to journal files that will go into `./import/{statement source}/journal`. If you need to change something in the generated report files, you neved do this manually - instead you will change CSV conversion rules and re-generate all .journal files from source files.
+
+After a couple of years typical filesystem tree will look like this:
 ```
 ├── 2014.journal
 ├── 2015.journal
