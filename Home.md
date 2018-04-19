@@ -12,7 +12,7 @@ You could grow a setup that would allow you to have all of this and more step by
 
 # Reading order
 
-If you are fairly experienced with ledger, hledger, beancount or any other plain-text accounting tool, you might want to quickly check out [how things are laid out](Directory-structure) and then head directly to the most featureful branch and look around to see how everything is done. Run `./export.sh` to generate all reports.
+If you are fairly experienced with ledger, hledger, beancount or any other plain-text accounting tool, you might want to quickly check out [Directory structure](Directory-structure) to see how things are laid out and then head directly to the most featureful branch and look around to see how everything is done. Run `./export.sh` to generate all reports.
 
 Alternatively, read the full guide:
 1. [Directory structure](Directory-structure)
