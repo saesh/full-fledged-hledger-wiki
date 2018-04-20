@@ -1,4 +1,4 @@
-Now that a single statement is successfully imported, grab all of them, as much as you can get your hands on. Let's assume that you can get 4 years worth of statements. Save them all in the same `in` directory
+Now that a single statement is successfully imported, grab all of them -- as many as you can get your hands on. Let's assume that you can get 4 years worth of statements. Save them all in the same `in` directory
 as your already-converted statement, run `./convert.sh` and hey presto -- you now have the full history of your main day-to-day account in a set of nice journal files in `./import/lloyds/journal`:
 ```
 import
@@ -25,12 +25,12 @@ import
 
 Generated journals span 4 years, so you would need more yearly journals: let's create `2014.journal`, `2015.journal` and `2016.journal` and `!include` all newly-converted journal files in there.
 
-When these files are created, a bit of housekeeping should be taken
-care of. As a rule, people usually don't want to retain last year
-expenses and keep accumulating current year expenses on top of that.
+When these files are created, a bit of housekeeping is required. As a rule, people usually don't want to retain the detailed record of expenses once the year is over and start expense tracking for the current year from scratch.
+
 On the other hand, assets and liabilities cannot be left behind and
 should be carried over into the next year. To achieve this carry-over,
-you need to make sure that your yearly files look like this:
+you 
+need to make sure that your yearly files look like this:
 
 ```
 !include ./export/{year}-opening.journal
@@ -69,4 +69,4 @@ export
 └── export.hs
 ```
 
-Remember to put them all under version control.
+Remember to put them all under version control. Check out branch [03-getting-full-history](../../tree/03-getting-full-history) to explore these changes
