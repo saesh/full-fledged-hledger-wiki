@@ -61,7 +61,7 @@ The trick here is to make transfers face imaginary 'transfers' account, so curre
    assets:Lloyds:transfers
 ```
 
-This requires further changes to the rules file and conversion scripts that could be seen in the branch [04-adding-more-accounts](../../tree/04-adding-more-accounts).
+This requires further changes to the rules file and conversion scripts that could be seen in the branch [04-adding-more-accounts](../tree/04-adding-more-accounts).
 
 As newly-converted journals are `!include`-ed into yearly files and
 `./export.sh` is re-ran, you can use version control system to verify
