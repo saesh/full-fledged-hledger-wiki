@@ -69,4 +69,6 @@ export
 └── export.hs
 ```
 
-Remember to put them all under version control. Check out branch [03-getting-full-history](../../tree/03-getting-full-history) to explore these changes
+Remember to put them all under version control. Check out branch [03-getting-full-history](../../tree/03-getting-full-history) to explore these changes.
+
+Now that you have imported your main account, it is time to [add more accounts](Adding-more-accounts) to your setup.
