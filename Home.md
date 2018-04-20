@@ -1,14 +1,14 @@
 # Goals
 
-I wanted a setup that would enable me to have:
+I wanted a setup that would satisfy three major requirements:
 
-- Avoid spending too much time, effort and manual work on tracking expenses
+- Tracking expenses should take as little time, effort and manual work as possible
 
-- Eventual consistency: even if you can't record something precisely right now, maybe I would be able to do it later
+- Eventual consistency should be achievable: even if I can't record something precisely right now, maybe I would be able to do it later, so I should be able to leave things half-done and pick them up later 
 
-- Ability to refactor. I want to be able to go back and change how I am doing things, with as little effort as possible and without fear of irrevocably breaking things.
+- Ability to refactor is a must. I want to be able to go back and change the way I am doing things, with as little effort as possible and without fear of irrevocably breaking things.
 
-You could grow a setup that would allow you to have all of this and more step by step. This repository contains a number of branches (`01-getting-started`, `02-getting-data-in`, ...) that represent a gradual evolution of the setup, starting from the bare minimum and adding one new feature at a time. This allows you to choose the starting point that is more suitable for you or compare/diff various setups and see what exactly has been changed at every step.
+You could grow a setup that would allow you to have all of this and more step by step. This repository contains a number of branches ([01-getting-started](../../tree/01-getting-started), [02-getting-data-in](02-getting-data-in), ...) that represent a gradual evolution of the setup, starting from the bare minimum and adding one new feature at a time. This allows you to choose the starting point that is more suitable for you or compare/diff various setups and see what exactly has been changed at every step.
 
 # Reading order
 
