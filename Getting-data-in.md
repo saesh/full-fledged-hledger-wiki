@@ -1,11 +1,10 @@
-The easiest place to start is with the account that is used to fund most of your day-to-day expenses. It is probably a checking/debit/credit card account at the bank of your choice or
+The easiest place to start is with your main account. Normally it would be the account that is used to fund most of your day-to-day expenses. It is probably a checking/debit/credit card account at the bank of your choice or
 a combination of several of them.
 
-You would want to get CSV statements for your account for a reasonable period of time. You can start small: get a statement for the last month or a calendar/fiscal year-to-date, and save somewhere
-next to your journal. I use `./import/<institution name>/in` for this purpose. For example, at some point, my current account was with Lloyds and their statements
-will go into `./import/lloyds/in/{filename}.csv`
+You would want to get CSV statements for your account covering a reasonable period of time. You can start small: get a statement for the last month or a calendar/fiscal year-to-date. You can always import older statements later (this would be covered further on). For now, let's save that single statement somewhere
+next to your journal. I use `./import/<institution name>/in` for this purpose. For example, my current account was once with Lloyds and so their statements will go into `./import/lloyds/in/{filename}.csv`
 
-Quite often these CSV files would not be directly usable with hledger's CSV import facility. You might need to do some data scrubbing. I've included a sample data file and conversion scripts in [02_getting_data_in](../tree/master/02_getting_data_in). If you run `./convert.sh` in `./import/lloyds`, you will get yourself a nice converted journal in `lloyds/import/journal`:
+Quite often these CSV files would not be directly suitable for hledger's CSV import facility. You might need to do some data scrubbing. I've included a sample data file and conversion scripts in [02-getting-data-in](../tree/02-getting-data-in). If you run `./convert.sh` in `./import/lloyds`, it will take raw files from `in`, generate scrubbed CSV files in `csv` and convert them into `.journal` files saved in `lloyds/import/journal`:
 ```
 import
 └── lloyds
@@ -20,7 +19,9 @@ import
     └── lloyds.rules                         - CSV conversion rules
 ```
 
-Here is a crucial bit: instead of copying that file into your journal, lets just `!include` it there. Now you can re-run `./export.sh` and lo and behold: generated reports will now have data in them
-and if you are keeping them under version control you should be able to see exactly what has changed there.
+Here is a crucial bit: instead of copying contents of that file into your journal, lets just `!include` it into yearly journal for appropriate year (in this case, 2017). Now you can re-run `./export.sh` and lo and behold: generated reports will now have data in them
+and if you are keeping them under version control you should be able to diff them against the previous version and see exactly what has changed where at a glance.
 
-You will notice that import rules put all expenses in the 'expenses' account. That's fine, suppose we do not have time to sort them out just now.
+You will notice that import rules put all expenses in the single 'expenses' account. That's fine, let's assume that you do not have time to sort them out just now, we will do this later.
+
+Now that you can easily convert single statement, let's [save and convert all of them](Getting-full-history-of-the-account).
