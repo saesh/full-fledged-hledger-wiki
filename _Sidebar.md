@@ -1,6 +1,7 @@
 [Home](Home)
-1. [Directory structure](Directory-structure)
-2. [Getting started](Getting-started)
-3. [Getting data in](Getting-data-in)
-4. [Getting full history of the account](Getting-full-history-of-the-account)
-5. [Adding more accounts](Adding-more-accounts)
+
+0. [Directory structure](Directory-structure)
+1. [Getting started](Getting-started)
+2. [Getting data in](Getting-data-in)
+3. [Getting full history of the account](Getting-full-history-of-the-account)
+4. [Adding more accounts](Adding-more-accounts)
