@@ -1,17 +1,31 @@
-> NB: If you are just starting with hledger, this section could overwhelm you. Skip it and return later after you've read the first couple of sections. 
+> NB: If you are just starting with hledger, this section could overwhelm you. Read "TL;DR" or just skip it and return later after you've read the first couple of sections. 
 
-I prefer to keep all hledger files in a single directory, with frequently-used files at top level and less important files hidden out of sight in a bunch of subdirectories.
+# TL;DR - what goes where
 
-At the top level, you would have a number of yearly journal files, one file per year (`2014.journal`, `2015.journal`, etc).
+* At the top level there is `all.journal` which contains just a bunch of `!include {year}.journal` lines
+* Each of `{year}.journal` files will `!include`: 
+  1. opening/closing balances files for next/previous year; 
+  2. a bunch of `!include`s for all the converted csv files; 
+  3. **all manual transactions that you have for that year**
+* Raw CSV files go into `import/{source}/in`
+* Converted CSV files go into `import/{source}/journal`
+* Run `./export.sh` after each change, commit everything religiously.
 
-Each of them will `!include` a bunch of files from import subdirectories (`./import/{statement source}/journal/`) and will also contain all manually-entered transactions for the given year. Import subdirectories will contain raw CSV/PDF/QIF statements exported from financial institutions that you have accounts with.
+# Long-winded explanation
+
+I prefer to keep all hledger files in a single directory, with frequently-used files at the top level and less important files hidden out of sight in a bunch of subdirectories.
+
+At the top level, you would have a number of yearly journal files, one file per year (`2014.journal`, `2015.journal`, etc). They would all be `!include`d in a single _master_ journal `all.journal`.
+
+Each of the yearly journals will, in turn, `!include` a bunch of files from import subdirectories (`./import/{statement source}/journal/`) and will also contain all manually-entered transactions for the given year. Import subdirectories will contain raw CSV/PDF/QIF statements exported from financial institutions that you have accounts with.
 
 Script `export.sh` is used to generate a bunch of reports in the `./export` subdirectory. Actual generation is driven by `./export/export.hs` which is a [Shake](http://shakebuild.com/) build system script. It is entirely possible that you would not normally look at any of those, but they would come in handy when/if you will refactor your financial records -- they would quickly show you which aggregate balances change and how.
 
 All source statements go into `./import/{statement source}/in`. Each source directory will have a small shell scripts `./import/{statement source}/convert.sh` that will converted raw input files proper CSV files and put them into `./import/{statement source}/csv`. These will be converted to journal files that will go into `./import/{statement source}/journal`. If you need to change something in the generated report files, you never do this manually - instead, you will change CSV conversion rules and re-generate all .journal files from source files.
 
-After a couple of years typical filesystem tree will look like this (showing single source of statements called `lloyds`):
+After a couple of years typical filesystem tree will look like this (showing a single source of statements called `lloyds`):
 ```
+├── all.journal
 ├── 2014.journal
 ├── 2015.journal
 ├── 2016.journal
@@ -65,3 +79,4 @@ After a couple of years typical filesystem tree will look like this (showing sin
         ├── lloyds2csv.pl
         └── lloyds.rules
 ```
+
