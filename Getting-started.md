@@ -1,7 +1,7 @@
 So, you want to keep track of your finances with hledger. You read [hledger step-by-step guide](http://hledger.org/step-by-step.html#useful-accounting-concepts), and you
 know the difference between "assets", "liabilities", "equity", "income" and "expenses".
 
-Let's get started. Look into [01-getting-started](../../tree/01-getting-started), where you will find a completely empty journal for the current year (at the time of writing - 2017) and a couple of export scripts.
+Let's get started. Look into [01-getting-started](../tree/01-getting-started), where you will find a completely empty journal for the current year (at the time of writing - 2017) and a couple of export scripts.
 Check that current year is properly reflected at the top of  `./export/export.hs`.
 
 Now run `./export.sh`, and a bunch of files would be generated in `./export`:
