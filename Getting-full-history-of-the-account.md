@@ -29,8 +29,7 @@ When these files are created, a bit of housekeeping is required. As a rule, peop
 
 On the other hand, assets and liabilities cannot be left behind and
 should be carried over into the next year. To achieve this carry-over,
-you 
-need to make sure that your yearly files look like this:
+you need to make sure that your yearly files look like this:
 
 ```
 !include ./export/{year}-opening.journal
@@ -40,7 +39,9 @@ need to make sure that your yearly files look like this:
 !include ./export/{year}-closing.journal
 ```
 
-File for the earliest year should not have an `!include` for opening balances, and file for the current year should not have `!include` for closing balances.
+File for the earliest year should not have an `!include` for opening balances, and file for the current year should not have `!include` for closing balances. 
+
+To state the obvious, you do not need to try and import all the previous years in one go. Do as many (or as few) as you want, just make sure that journal for the earliest year (in our case - `2014.journal`) has a transaction for opening balance to ensure that all the numbers line up. We previously had a similar transaction in `2017.journal`, but it is not needed anymore and could be removed.
 
 Note that we are `!include`ing files from `./export` - they would be auto-generated, you will not have to generate them manually.
 
