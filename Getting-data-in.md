@@ -1,3 +1,5 @@
+> Associated branch: [02-getting-data-in](../tree/02-getting-data-in)
+
 The easiest place to start is with your main account. Normally it would be the account that is used to fund most of your day-to-day expenses. It is probably a checking/debit/credit card account at the bank of your choice or
 a combination of several of them.
 
@@ -19,9 +21,22 @@ import
     └── lloyds.rules                         - CSV conversion rules
 ```
 
-Here is a crucial bit: instead of copying contents of that file into your journal, lets just `!include` it into yearly journal for appropriate year (in this case, 2017). Now you can re-run `./export.sh` and lo and behold: generated reports will now have data in them
+Here is a crucial bit: instead of copying the contents of that file into your journal, lets just `!include` it into the yearly journal for appropriate year (in this case, 2017). Now you can re-run `./export.sh` and lo and behold: generated reports will now have data in them
 and if you are keeping them under version control you should be able to diff them against the previous version and see exactly what has changed where at a glance.
 
 You will notice that import rules put all expenses in the single 'expenses' account. That's fine, let's assume that you do not have time to sort them out just now, we will do this later.
 
 Now that you can easily convert single statement, let's [save and convert all of them](Getting-full-history-of-the-account).
+
+## Initial Balances
+
+Most probably your account was not opened in 2017. If your account already had some balance on 1st Jan 2017, you will need to record this in your journal. As with all other manual transactions, you will put this in top-level yearly file, in this case it is `2017.journal`:
+
+```
+;; Opening balances
+2017/01/01 opening balances
+  assets:Lloyds:current    = £100
+  equity:opening balances
+```
+
+Make sure you use `equity:opening balances` as this is an account that `hledger equity` uses to generate end-of-year transactions (we will cover them later).
