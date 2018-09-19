@@ -10,6 +10,7 @@
 * Raw CSV files go into `import/{source}/in`
 * Converted CSV files go into `import/{source}/journal`
 * Run `./export.sh` after each change, commit everything religiously.
+* When you run `hledger` manually, point it to `all.journal` most of the time.
 
 # Long-winded explanation
 
