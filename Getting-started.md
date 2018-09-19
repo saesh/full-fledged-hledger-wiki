@@ -1,3 +1,5 @@
+> Associated branch: [01-getting-started](../tree/01-getting-started)
+
 So, you want to keep track of your finances with hledger. You read [hledger step-by-step guide](http://hledger.org/step-by-step.html#useful-accounting-concepts), and you
 know the difference between "assets", "liabilities", "equity", "income" and "expenses".
 
