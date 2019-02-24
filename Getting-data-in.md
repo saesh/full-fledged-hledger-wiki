@@ -1,37 +1,76 @@
-> Associated branch: [02-getting-data-in](../tree/02-getting-data-in)
+> Associated directory: [02-getting-data-in](../../tree/master/02-getting-data-in)
 
-The easiest place to start is with your main account. Normally it would be the account that is used to fund most of your day-to-day expenses. It is probably a checking/debit/credit card account at the bank of your choice or
+## Downloading files
+
+The easiest place to start is with your main account. Normally it would be the account that you use to fund most of your day-to-day expenses. It is probably a checking/debit/credit card account at the bank of your choice or
 a combination of several of them.
 
-You would want to get CSV statements for your account covering a reasonable period of time. You can start small: get a statement for the last month or a calendar/fiscal year-to-date. You can always import older statements later (this would be covered further on). For now, let's save that single statement somewhere
-next to your journal. I use `./import/<institution name>/in` for this purpose. For example, my current account was once with Lloyds and so their statements will go into `./import/lloyds/in/{filename}.csv`
+You would want to get CSV statements for your account covering a
+reasonable period of time. You can start small: get a statement for
+the last month or a calendar/fiscal year-to-date. You can always
+import older statements later (this would be covered in later
+chapters). For now, let's save that single statement in
+`./import/<institution name>/in`. For example, my current account was
+once with Lloyds and so their statements will go into
+`./import/lloyds/in/{filename}.csv`. From now on I will keep using Lloyds as an example.
 
-Quite often these CSV files would not be directly suitable for hledger's CSV import facility. You might need to do some data scrubbing. I've included a sample data file and conversion scripts in [02-getting-data-in](../tree/02-getting-data-in). If you run `./convert.sh` in `./import/lloyds`, it will take raw files from `in`, generate scrubbed CSV files in `csv` and convert them into `.journal` files saved in `lloyds/import/journal`:
+## Conversion scripts
+
+Quite often these CSV files would not be directly suitable for
+hledger's CSV import facility. You might want or need to do some data
+scrubbing. Lets say that in our example I want to remove extra
+spaces from the description field and replace numeric account names
+with human-readable ones -- even though it is not necessary to import
+my sample file, I want to demonstrate how clean-up script could be
+ran. Lets place the clean-up script in `./import/lloyds/in/in2csv`:
 ```
-import
-└── lloyds
-    ├── convert.sh                           - conversion script. This is what you will run
-    ├── lloyds2csv.pl                        - helper script to clean up downloaded statements
-    ├── in
-    │   └── 99966633_20171223_1844.csv       - original downloaded file
-    ├── csv
-    │   └── 99966633_20171223_1844.csv       - cleaned up file, ready to be consumed by hledger
-    ├── journal
-    │   └── 99966633_20171223_1844.journal   - generated journal
-    └── lloyds.rules                         - CSV conversion rules
+#!/bin/bash
+sed -e 's/  +/ /g; s/,99966633,/,assets:Lloyds:current,/' < "$1"
 ```
 
-Here is a crucial bit: instead of copying the contents of that file into your journal, lets just `!include` it into the yearly journal for appropriate year (in this case, 2017). Now you can re-run `./export.sh` and lo and behold: generated reports will now have data in them
-and if you are keeping them under version control you should be able to diff them against the previous version and see exactly what has changed where at a glance.
+Then you need to write conversion rules for hledger's CSV import
+command (place them in `./import/lloyds/lloyds.rules`) and a script
+that can use these rules to print out converted `journal` file. Place
+it in `./import/lloyds/in/csv2journal`. Usually it is as simple as
+this:
+```
+#!/bin/bash
+hledger print --rules-file lloyds.rules -f "$1"
+```
 
-You will notice that import rules put all expenses in the single 'expenses' account. That's fine, let's assume that you do not have time to sort them out just now, we will do this later.
+## Automating the conversion
 
-Now that you can easily convert single statement, let's [save and convert all of them](Getting-full-history-of-the-account).
+Build rules (from `./export/export.hs`) will automatically invoke
+conversion scripts if you call them `in2csv` and `csv2journal` and
+indicate that you want conversion for this particular directory --
+this is better than automatically try to discover and convert all the
+`in/*.csv` files in the `import` directory.
+
+Let's enroll our `lloyds` directory into automatic conversion by
+editing `export/export.hs`:
+```
+   -- Enumerate directories with auto-generated cleaned csv files
+   [ "//import/lloyds/csv/*.csv" ] |%> in2csv
+ 
+   -- Enumerate directories with auto-generated journals
+   [ "//import/lloyds/journal/*.journal" ] |%> csv2journal
+
+```
+
+`Shake` operate with absolute pathnames, so path to `import` in the
+example above starts with `//` to indicate that `import` could be anywhere
+on your disk.
+
+Your conversion scripts will be ran from the directory where they
+reside, so you could refer to other files (like `lloyds.rules`) by
+their relative names.
 
 ## Initial Balances
 
-Most probably your account was not opened in 2017. If your account already had some balance on 1st Jan 2017, you will need to record this in your journal. As with all other manual transactions, you will put this in top-level yearly file, in this case it is `2017.journal`:
-
+Most probably your account was not opened in 2017. If your account
+already had some balance on 1st Jan 2017, you will need to record this
+in your journal. As with all other manual transactions, you will put
+this in top-level yearly file, in this case it is `2017.journal`: 
 ```
 ;; Opening balances
 2017/01/01 opening balances
@@ -39,4 +78,75 @@ Most probably your account was not opened in 2017. If your account already had s
   equity:opening balances
 ```
 
-Make sure you use `equity:opening balances` as this is an account that `hledger equity` uses to generate end-of-year transactions (we will cover them later).
+Make sure you use `equity:opening balances` as this is an account that
+`hledger equity` uses to generate end-of-year equity carry-over
+transactions (we will cover them later). 
+
+
+## Tying it all in
+
+Finally, everything is in place to convert downloaded file
+and to `.journal`.
+
+Here is a crucial bit: instead of copying the contents of that file
+into your journal for the current year, lets just `!include` it, so now your
+ `2017.journal` will look like this:
+```
+;; Opening balances
+2017/01/01 opening balances
+  assets:Lloyds:current    = £100
+  equity:opening balances
+  
+!include ./import/lloyds/journal/99966633_20171223_1844.journal
+```
+
+Now you can run `./export.sh`. This will automatically run `in2csv`
+and `csv2journal` scripts with the right set of arguments and
+regenerate all your reports. If you are keeping reports under version
+control you should be able to diff them against the previous version
+and see exactly what has changed where at a glance.
+
+You will notice that import rules put all expenses in the single
+`expenses` account. That's fine, let's assume that you do not have
+time to sort them out just now, we will do this later.
+
+## Recap
+
+I've included a sample data file and conversion scripts in
+[02-getting-data-in](../../tree/master/02-getting-data-in):
+```
+import
+└── lloyds
+    ├── in
+    │   └── 99966633_20171223_1844.csv       - sample of the original downloaded file
+    ├── csv
+    │   └── 99966633_20171223_1844.csv       - cleaned up file, ready to be consumed by 'hledger print'
+    ├── journal
+    │   └── 99966633_20171223_1844.journal   - generated journal
+    ├── in2csv                               - conversion script to produce files in ./csv
+    ├── csv2journal                          - conversion script to produce files in ./journal
+    └── lloyds.rules                         - CSV conversion rules
+```
+
+Full list of changes done from the previous step could be seen in
+[diffs/01-to-02.diff](../../tree/master/diffs/01-to-02.diff). There is a
+single bit of change there not covered so far: CSV conversion rules in
+`lloyds.rules` are added as a dependency for autogenerated Lloyds
+journals so that changes in the rules files will cause all journals to
+be regenerated:
+```
+extraDeps file
+  | "//lloyds//*.journal" ?== file   = ["lloyds.rules"]
+  | otherwise = []
+
+```
+
+Build rules automatically add `in2csv` and `csv2journal` as
+dependencies to the files they produce, so any changes in those
+scripts will cause all relevant outputs to be regenerated.
+
+## Next steps
+
+Now that you have converted single statement, let's get full history
+of a single account, [save and convert all of them](Getting-full-history-of-the-account).
+

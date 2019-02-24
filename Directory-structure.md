@@ -1,83 +1,55 @@
-> NB: If you are just starting with hledger, this section could overwhelm you. Read "TL;DR" or just skip it and return later after you've read the first couple of sections. 
+> NB: If you are just starting with hledger, this section would definitely
+> overwhelm you. Skip it entirely - everything contained here will be introduced in subsequent
+> sections.
+>
+> However, if you are experienced and impatient hledger user who does not want to read through the whole wiki
+> or just want a refresher of what goes where, then this section might be for you.
 
 # TL;DR - what goes where
 
-* At the top level there is `all.journal` which contains just a bunch of `!include {year}.journal` lines
-* Each of `{year}.journal` files will `!include`: 
-  1. opening/closing balances files for next/previous year; 
+* All files reside in a single directory with two subdirectories: one
+  for the source files from financial institutions (`./import`), and
+  one for generated summaries and reports (`./export`).
+  
+* At the top level there is `all.journal` which is the main entry
+  point for all of your financial history. It contains just a bunch
+  of `!include` lines
+
+* Next to it are a bunch of `{year}.journal` files that will have: 
+  1. `!include` of the opening balances file carrying over your assets/liabilities from previous year; 
   2. a bunch of `!include`s for all the converted csv files; 
   3. **all manual transactions that you have for that year**
-* Raw CSV files go into `import/{source}/in`
-* Converted CSV files go into `import/{source}/journal`
-* Run `./export.sh` after each change, commit everything religiously.
+
+* Raw CSV files go into `./import/{source}/in`
+
+* Converted CSV files go into `./import/{source}/journal`
+
+* Run `./export.sh` after each change, check the changes to the
+  reports generated in `./export`, commit everything religiously.
+
 * When you run `hledger` manually, point it to `all.journal` most of the time.
 
-# Long-winded explanation
+* It is ok to stop reading here and head on to
+  [Getting started](Getting-started.md) and read the rest of the
+  section later.
 
-I prefer to keep all hledger files in a single directory, with frequently-used files at the top level and less important files hidden out of sight in a bunch of subdirectories.
+# But why ... ?
 
-At the top level, you would have a number of yearly journal files, one file per year (`2014.journal`, `2015.journal`, etc). They would all be `!include`d in a single _master_ journal `all.journal`.
+Why is `all.journal` structured the way it is?
 
-Each of the yearly journals will, in turn, `!include` a bunch of files from import subdirectories (`./import/{statement source}/journal/`) and will also contain all manually-entered transactions for the given year. Import subdirectories will contain raw CSV/PDF/QIF statements exported from financial institutions that you have accounts with.
+Why per-year files at all?
 
-Script `export.sh` is used to generate a bunch of reports in the `./export` subdirectory. Actual generation is driven by `./export/export.hs` which is a [Shake](http://shakebuild.com/) build system script. It is entirely possible that you would not normally look at any of those, but they would come in handy when/if you will refactor your financial records -- they would quickly show you which aggregate balances change and how.
+Do they have to start on January?
 
-All source statements go into `./import/{statement source}/in`. Each source directory will have a small shell scripts `./import/{statement source}/convert.sh` that will converted raw input files proper CSV files and put them into `./import/{statement source}/csv`. These will be converted to journal files that will go into `./import/{statement source}/journal`. If you need to change something in the generated report files, you never do this manually - instead, you will change CSV conversion rules and re-generate all .journal files from source files.
+What do I do to start a new year?
 
-After a couple of years typical filesystem tree will look like this (showing a single source of statements called `lloyds`):
-```
-├── all.journal
-├── 2014.journal
-├── 2015.journal
-├── 2016.journal
-├── 2017.journal
-├── export
-│   ├── 2014-all.journal
-│   ├── 2014-balance-sheet.txt
-│   ├── 2014-closing.journal
-│   ├── 2014-income-expenses.txt
-│   ├── 2015-all.journal
-│   ├── 2015-balance-sheet.txt
-│   ├── 2015-closing.journal
-│   ├── 2015-income-expenses.txt
-│   ├── 2015-opening.journal
-│   ├── 2016-all.journal
-│   ├── 2016-balance-sheet.txt
-│   ├── 2016-closing.journal
-│   ├── 2016-income-expenses.txt
-│   ├── 2016-opening.journal
-│   ├── 2017-all.journal
-│   ├── 2017-balance-sheet.txt
-│   ├── 2017-closing.journal
-│   ├── 2017-income-expenses.txt
-│   ├── 2017-opening.journal
-│   └── export.hs
-├── export.sh
-└── import
-    └── lloyds
-        ├── convert.sh
-        ├── csv
-        │   ├── 12345678_20171225_0001.csv
-        │   ├── 12345678_20171225_0002.csv
-        │   ├── 99966633_20171223_1844.csv
-        │   ├── 99966633_20171224_2041.csv
-        │   ├── 99966633_20171224_2042.csv
-        │   └── 99966633_20171224_2043.csv
-        ├── in
-        │   ├── 12345678_20171225_0001.csv
-        │   ├── 12345678_20171225_0002.csv
-        │   ├── 99966633_20171223_1844.csv
-        │   ├── 99966633_20171224_2041.csv
-        │   ├── 99966633_20171224_2042.csv
-        │   └── 99966633_20171224_2043.csv
-        ├── journal
-        │   ├── 12345678_20171225_0001.journal
-        │   ├── 12345678_20171225_0002.journal
-        │   ├── 99966633_20171223_1844.journal
-        │   ├── 99966633_20171224_2041.journal
-        │   ├── 99966633_20171224_2042.journal
-        │   └── 99966633_20171224_2043.journal
-        ├── lloyds2csv.pl
-        └── lloyds.rules
-```
+How do I start from scratch?
 
+What if my current setup is completely different - how do I convert?
+
+I love single wiki page that contain all the answers as much as the
+next man. Unfortunately, my attempts to write a single page that fully
+describes my setup had failed miserably, and the best I can offer you
+is to head to [Getting started](Getting-started.md) and read the rest
+of the wiki - it is not too large, and hopefully you would be able to
+skip over large sections that explain things you aleady know.

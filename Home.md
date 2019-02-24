@@ -2,19 +2,52 @@
 
 I wanted a setup that would satisfy three major requirements:
 
-- Tracking expenses should take as little time, effort and manual work as possible
+- Tracking expenses should take as little time, effort and manual work as possible.
 
-- Eventual consistency should be achievable: even if I can't record something precisely right now, maybe I would be able to do it later, so I should be able to leave things half-done and pick them up later 
+- It should be easy to work towards eventual consistency. Large and
+  danting tasks (like "I will process 10 years of paper mortgage
+  statements" or "I want to import 5 years of paypal payments") should
+  not require one big push and perfect planning to finish them.
+  Instead I should be able to do them bit by little bit, leaving
+  things half-done, and picking them up later with little (mental)
+  effort. Eventually my records would be perfect and consistent.
 
-- Ability to refactor is a must. I want to be able to go back and change the way I am doing things, with as little effort as possible and without fear of irrevocably breaking things.
+- Ability to refactor is a must. This is the natural extension of the
+  previous point. I want to be able to go back and change the way I am
+  doing things, with as little effort as possible and without fear of
+  irrevocably breaking things. 
 
-You could grow a setup that would allow you to have all of this and more step by step. This repository contains a number of branches ([01-getting-started](../../tree/01-getting-started), [02-getting-data-in](../tree/02-getting-data-in), ...) that represent a gradual evolution of the setup, starting from the bare minimum and adding one new feature at a time. This allows you to choose the starting point that is more suitable for you or compare/diff various setups and see what exactly has been changed at every step.
+I believe that have a setup that allows you to do all that, and more.
 
-# Reading order
+# Structure
 
-If you are fairly experienced with ledger, hledger, beancount or any other plain-text accounting tool, you might want to quickly check out [Directory structure](Directory-structure) to see how things are laid out and then head directly to the most featureful branch and look around to see how everything is done. Run `./export.sh` to generate all reports.
+It is relatively easy to describe *what* I am doing, but it is harder
+to descibe *why*. The easiest way to to answer all the *why* questions
+is to illustrate how one can grow a setup from scratch, gradually
+introducing problems and solutions.
 
-Alternatively, read the full guide:
+This repository contains a number of directories
+([01-getting-started](../tree/master/01-getting-started),
+[02-getting-data-in](../tree/master/02-getting-data-in), ...) that
+represent evolution of the setup, starting from the bare minimum and
+adding one new feature at a time. This allows you to choose the
+starting point that is more suitable for you or compare/diff various
+setups and see what exactly has been changed at every step : diffs
+between the steps are in the [diffs](../tree/master/diffs)
+directory.
+
+# Suggested reading order
+
+If you are fairly experienced with ledger, hledger, beancount or any
+other plain-text accounting tool, you might want to quickly check out
+[Directory structure](Directory-structure) to see how things are laid
+out and then head directly to the most featureful
+(most-highly-numbered) directory and take a look around to see how
+everything is done. Run `./export.sh` to generate all reports and see
+what is being processed and how. If things dont make sense, start at
+the beginning.
+
+Full guide reads in the following order1:
 
 0. [Directory structure](Directory-structure)
 1. [Getting started](Getting-started)
