@@ -120,11 +120,12 @@ import
     ├── in
     │   └── 99966633_20171223_1844.csv       - sample of the original downloaded file
     ├── csv
-    │   └── 99966633_20171223_1844.csv       - cleaned up file, ready to be consumed by 'hledger print'
+    │   └── 99966633_20171223_1844.csv       - cleaned up file, ready to be consumed by
+    │                                          'hledger print'
     ├── journal
     │   └── 99966633_20171223_1844.journal   - generated journal
-    ├── in2csv                               - conversion script to produce files in ./csv
-    ├── csv2journal                          - conversion script to produce files in ./journal
+    ├── in2csv                               - conversion script to produce ./csv/*
+    ├── csv2journal                          - conversion script to produce ./journal/*
     └── lloyds.rules                         - CSV conversion rules
 ```
 

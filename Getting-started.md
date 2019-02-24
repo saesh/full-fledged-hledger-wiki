@@ -25,13 +25,17 @@ current = 2017
 Now run `./export.sh`, and a bunch of files would be generated in `./export`:
 ```
 export
-├── 2017-all.journal           - a list of all transactions for the year, to simplify review and double-checking
-├── 2017-balance-sheet.txt     - balance sheet for the end of the year, showing your assets and liabilities
+├── 2017-all.journal           - a list of all transactions for the year, to simplify review
+│                                and double-checking
+├── 2017-balance-sheet.txt     - balance sheet for the end of the year, showing your assets
+│                                and liabilities
 ├── 2017-closing.journal       - closing balances of all assets and liabilities accounts
 ├── 2017-cash-flow.txt         - cash flow report for the year
 ├── 2017-income-expenses.txt   - income and expense report for the year
-├── 2017-unknown.journal       - journal of all transactions in "unknow" accounts, for further review.
-└── export.hs                  - Shake build script that describes how these reports are generated
+├── 2017-unknown.journal       - journal of all transactions in "unknow" accounts,
+│                                for further review.
+└── export.hs                  - Shake build script that describes how these reports
+                                 are generated
 ```
 
 General idea is to keep these files under version control so that

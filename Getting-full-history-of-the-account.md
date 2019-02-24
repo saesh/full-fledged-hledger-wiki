@@ -13,17 +13,18 @@ will expect them to look like this:
 ```
 import
 └── lloyds
-    ├── in                                   - these are the original yearly statements: one that we had before and three new ones
+    ├── in                                 - these are the original yearly statements:
+    │                                        one that we had before and three new ones
     │   ├── 99966633_20171223_1844.csv
     │   ├── 99966633_20171224_2041.csv
     │   ├── 99966633_20171224_2042.csv
     │   └── 99966633_20171224_2043.csv
-    ├── csv                                  - cleaned up files that we expect to be produced in a minute
+    ├── csv                                - cleaned up files that we expect to be produced
     │   ├── 99966633_20171223_1844.csv
     │   ├── 99966633_20171224_2041.csv
     │   ├── 99966633_20171224_2042.csv
     │   └── 99966633_20171224_2043.csv
-    └── journal                              - generated journals that we will use
+    └── journal                            - generated journals that we will use
         ├── 99966633_20171223_1844.journal
         ├── 99966633_20171224_2041.journal
         ├── 99966633_20171224_2042.journal
@@ -196,7 +197,7 @@ This is how everything should work at this point:
                                            v
                                 import/loyds/journal/*
                                            +
-      +------------- ----------------------------------------------- ------------+
+      +--------------------------------------------------------------------------+
       |                       |                        |                         |
       |                       |                        |                         |
       |                       |                        |                         |
