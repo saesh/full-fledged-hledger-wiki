@@ -1,4 +1,4 @@
-> Associated directory: [01-getting-started](../../tree/master/01-getting-started)
+> Associated directory: [01-getting-started](../tree/master/01-getting-started)
 
 I assume that you want to keep track of your finances with
 [hledger](http://hledger.org). You have read
@@ -10,7 +10,7 @@ However, it is a hard to begin: which accounts one should create and
 maintain? How to deal with multiple years and multiple banks? What if
 you later decide to change something?
 
-Let's get started. Look into [01-getting-started](../../tree/master/01-getting-started), where you will find a completely empty journal for the current year (at the time of writing - 2017) and a couple of export scripts.
+Let's get started. Look into [01-getting-started](../tree/master/01-getting-started), where you will find a completely empty journal for the current year (at the time of writing - 2017) and a couple of export scripts.
 Check that current year is properly reflected at the top of
 `./export/export.hs`:
 
