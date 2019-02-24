@@ -8,7 +8,7 @@ I wanted a setup that would satisfy three major requirements:
 
 - Ability to refactor is a must. I want to be able to go back and change the way I am doing things, with as little effort as possible and without fear of irrevocably breaking things.
 
-You could grow a setup that would allow you to have all of this and more step by step. This repository contains a number of branches ([01-getting-started](../../tree/01-getting-started), [02-getting-data-in](02-getting-data-in), ...) that represent a gradual evolution of the setup, starting from the bare minimum and adding one new feature at a time. This allows you to choose the starting point that is more suitable for you or compare/diff various setups and see what exactly has been changed at every step.
+You could grow a setup that would allow you to have all of this and more step by step. This repository contains a number of branches ([01-getting-started](../../tree/01-getting-started), [02-getting-data-in](../tree/02-getting-data-in), ...) that represent a gradual evolution of the setup, starting from the bare minimum and adding one new feature at a time. This allows you to choose the starting point that is more suitable for you or compare/diff various setups and see what exactly has been changed at every step.
 
 # Reading order
 
