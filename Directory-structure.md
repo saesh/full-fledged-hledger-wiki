@@ -30,7 +30,7 @@
 * When you run `hledger` manually, point it to `all.journal` most of the time.
 
 * It is ok to stop reading here and head on to
-  [Getting started](Getting-started.md) and read the rest of the
+  [Getting started](Getting-started) and read the rest of the
   section later.
 
 # But why ... ?
