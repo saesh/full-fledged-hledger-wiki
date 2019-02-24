@@ -186,37 +186,37 @@ make sure that journal for the earliest year (in our case -
 This is how everything should work at this point:
 
 ```
-                                  import/loyds/in/*
-                                             +
-                                             |  in2csv
-                                             v
-                                  import/loyds/csv/*
-                                             +
-                                             |  csv2journal
-                                             v
-                                  import/loyds/journal/*
-                                             +
-        +----------------------------------------------------------------------------+
-        |                        |                         |                         |
-        |                        |                         |                         |
-        |                        |                         |                         |
-  +-----v---------+         +----v-------+            +----v-------+            +----v-------+
-  | 2014.journal  |      +-->2015.journal|         +-->2016.journal|         +-->2017.journal|
-  |               |      |  +------------+         |  +------------+         |  +------------+
-  |[manual opening|      |   | |                   |   | |                   |   | |
-  | of balances]  |      |   | |                   |   | |                   |   | |
-  +---------------+      |   | |                   |   | |                   |   | |
-   | |                   |   | |                   |   | |                   |   | |
-   | v                   |   | v                   |   | v                   |   | v
-   | reports             |   | reports             |   | reports             |   | reports
-   | closing of 2014     |   | closing of 2015     |   | closing of 2016     |   |
-   |   + +               |   |   + +               |   |   + +               |   |
-   |   | |               +   |   | |               +   |   | |               +   |
-   |   | +->opening of 2015  |   | +->opening of 2016  |   | +->opening of 2017  |
-   |   |                     |   |                     |   |                     |
-  +v---v---------------------v---v---------------------v---v---------------------v-----------+
-  |all.journal                                                                               |
-  +------------------------------------------------------------------------------------------+
+                                import/loyds/in/*
+                                           +
+                                           |  in2csv
+                                           v
+                                import/loyds/csv/*
+                                           +
+                                           |  csv2journal
+                                           v
+                                import/loyds/journal/*
+                                           +
+      +----------------------------------------------------------------------------+
+      |                        |                         |                         |
+      |                        |                         |                         |
+      |                        |                         |                         |
++-----v---------+         +----v-------+            +----v-------+            +----v-------+
+| 2014.journal  |      +-->2015.journal|         +-->2016.journal|         +-->2017.journal|
+|               |      |  +------------+         |  +------------+         |  +------------+
+|[manual opening|      |   | |                   |   | |                   |   | |
+| of balances]  |      |   | |                   |   | |                   |   | |
++---------------+      |   | |                   |   | |                   |   | |
+ | |                   |   | |                   |   | |                   |   | |
+ | v                   |   | v                   |   | v                   |   | v
+ | reports             |   | reports             |   | reports             |   | reports
+ | closing of 2014     |   | closing of 2015     |   | closing of 2016     |   |
+ |   + +               |   |   + +               |   |   + +               |   |
+ |   | |               +   |   | |               +   |   | |               +   |
+ |   | +->opening of 2015  |   | +->opening of 2016  |   | +->opening of 2017  |
+ |   |                     |   |                     |   |                     |
++v---v---------------------v---v---------------------v---v---------------------v-----------+
+|all.journal                                                                               |
++------------------------------------------------------------------------------------------+
 ```
 
 Files in `import` are being cleaned up and converted from CSV to
