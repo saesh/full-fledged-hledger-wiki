@@ -50,6 +50,6 @@ What if my current setup is completely different - how do I convert?
 I love single wiki page that contain all the answers as much as the
 next man. Unfortunately, my attempts to write a single page that fully
 describes my setup had failed miserably, and the best I can offer you
-is to head to [Getting started](Getting-started.md) and read the rest
+is to head to [Getting started](Getting-started) and read the rest
 of the wiki - it is not too large, and hopefully you would be able to
 skip over large sections that explain things you aleady know.
