@@ -1,5 +1,5 @@
 > Associated directory:
-> [04-adding-more-accounts](../../tree/master/04-adding-more-accounts)
+> [04-adding-more-accounts](../tree/master/04-adding-more-accounts)
 
 You probably have more than one account at the same financial institution where you have your current account. It could be the current account of your significant other or a savings account. Hopefully statement for this account
 would be in the same format, so it should be easy to grab those as well and convert them.
@@ -88,8 +88,8 @@ From `transfers` perspective, money will move in and out, and account will be le
 
 This requires small changes changes to the rules file and conversion scripts
 that could be seen in the directory
-[04-adding-more-accounts](../../tree/master/04-adding-more-accounts)
-or in the [diffs/03-to-04.diff](../../tree/master/diffs/03-to-04.diff).
+[04-adding-more-accounts](../tree/master/04-adding-more-accounts)
+or in the [diffs/03-to-04.diff](../tree/master/diffs/03-to-04.diff).
 
 Now when you run
 `./export.sh`, you can use version control system to verify

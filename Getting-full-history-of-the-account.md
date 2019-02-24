@@ -1,4 +1,4 @@
-> Associated directory: [03-getting-full-history](../../tree/master/03-getting-full-history)
+> Associated directory: [03-getting-full-history](../tree/master/03-getting-full-history)
 
 Now that a single statement is successfully imported, grab all of them
 -- as many as you can get your hands on. Let's assume that you can get
@@ -169,9 +169,9 @@ export
 Remember to put them all under version control!
 
 Check out supplied directory
-[03-getting-full-history](../../tree/master/03-getting-full-history)
+[03-getting-full-history](../tree/master/03-getting-full-history)
 to explore these changes or see
-[diffs/02-to-03.diff](../../tree/master/diffs/02-to-03.diff) to see
+[diffs/02-to-03.diff](../tree/master/diffs/02-to-03.diff) to see
 the diff of changes done since the previous chapter.
 
 ## Pace yourself
