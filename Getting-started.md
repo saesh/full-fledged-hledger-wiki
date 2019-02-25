@@ -6,12 +6,12 @@ I assume that you want to keep track of your finances with
 and you know the difference between "assets", "liabilities", "equity",
 "income" and "expenses".
 
-However, it is a hard to begin: which accounts one should create and
+However, it is hard to begin: which accounts one should create and
 maintain? How to deal with multiple years and multiple banks? What if
 you later decide to change something?
 
 Let's get started. Look into [01-getting-started](../tree/master/01-getting-started), where you will find a completely empty journal for the current year (at the time of writing - 2017) and a couple of export scripts.
-Check that current year is properly reflected at the top of
+Check that the current year is properly reflected at the top of
 `./export/export.hs`:
 
 ```
@@ -32,7 +32,7 @@ export
 ├── 2017-closing.journal       - closing balances of all assets and liabilities accounts
 ├── 2017-cash-flow.txt         - cash flow report for the year
 ├── 2017-income-expenses.txt   - income and expense report for the year
-├── 2017-unknown.journal       - journal of all transactions in "unknow" accounts,
+├── 2017-unknown.journal       - journal of all transactions in "unknown" accounts,
 │                                for further review.
 └── export.hs                  - Shake build script that describes how these reports
                                  are generated
@@ -41,11 +41,11 @@ export
 General idea is to keep these files under version control so that
 whenever you want to change anything in your setup it would be easy to
 see what exactly was affected by asking version control system for
-diffs versus previously saved version of these reports.
+diffs versus the previously saved version of these reports.
 
 As you can see, your current journal is empty and reports reflect
 this - they would show that various totals are zero and pretty much
-nothing else. Commit all of them into version control system of your
+nothing else. Commit all of them into the version control system of your
 choice.
 
 Now it is time to [get some data in](Getting-data-in). 
