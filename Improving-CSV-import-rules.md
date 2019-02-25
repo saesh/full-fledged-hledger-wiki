@@ -15,7 +15,7 @@ improve them over time in small increments.
 
 ## Known unknowns
 
-Lets start with creating a record of all unsorted transactions and
+Let's start with creating a record of all unsorted transactions and
 work on reducing this list to nothing.
 
 This sounds like another report to generate, and it will take just a
@@ -52,7 +52,7 @@ couple of lines to add it to `export.sh`:
 Run `./export.sh`, and now you can start working through all the
 `*-unknown.journal` files in the `export` directory, adding rules into
 CSV rulefile (`lloyds.rules` in my example) to sort them into
-appropirate accounts. You should also be able to detect when import of
+appropriate accounts. You should also be able to detect when import of
 new files creates new transactions in `expenses:unknown` or
 `income:unknown`, at which point you might categorize them.
 
@@ -82,7 +82,7 @@ or [diffs/04-to-05.diff](../tree/master/diffs/04-to-05.diff).
 Once you put these new reports under version control you would be able to
 spot account additions easily and fix any typos. 
 
-Keeping account registry comes especially handy if you decide to
+Keeping the account registry comes especially handy if you decide to
 rename or split/consolidate accounts, helping you to make sure that
 you did not leave any stray transactions behind.
 
