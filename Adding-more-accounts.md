@@ -113,4 +113,4 @@ Same applies to Amazon purhases (once you start importing Amazon statements), cr
 ## Next steps
 
 Now you can start getting your data in shape, for example, you can
-start to classify expenses by [tweaking your CSV import rules](Improving-CSV-import-rules).
+start to classify expenses by [creating your CSV import rules](Creating-CSV-import-rules).

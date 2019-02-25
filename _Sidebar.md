@@ -5,5 +5,6 @@
 2. [Getting data in](Getting-data-in)
 3. [Getting full history of the account](Getting-full-history-of-the-account)
 4. [Adding more accounts](Adding-more-accounts)
-5. [Improving CSV import rules](Improving-CSV-import-rules)
+5. [Creating CSV import rules](Creating-CSV-import-rules)
+6. [Maintaining CSV rules](Maintaining-CSV-rules)
 6. [ChangeLog](Changelog)

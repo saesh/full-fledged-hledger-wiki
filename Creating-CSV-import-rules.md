@@ -1,5 +1,5 @@
 > Associated directory:
-> [05-improving-csv-import-rules](../tree/master/05-improving-csv-import-rules)
+> [05-creating-csv-import-rules](../tree/master/05-creating-csv-import-rules)
 
 If you follow along with the evolution of the sample directory, you
 know that currently all expenses are being sent in a sinlge top-level
@@ -76,7 +76,7 @@ Fortunately, hledger provides us with `hledger accounts` command which
 will print out a sorted list of accounts mentioned in the given
 journal file. Lets add another rule to `export.hs` to
 generate `export/<year>-accounts.txt` file - check out
-[05-improving-csv-import-rules](../tree/master/05-improving-csv-import-rules)
+[05-creating-csv-import-rules](../tree/master/05-creating-csv-import-rules)
 or [diffs/04-to-05.diff](../tree/master/diffs/04-to-05.diff).
 
 Once you put these new reports under version control you would be able to
@@ -88,4 +88,4 @@ you did not leave any stray transactions behind.
 
 ## Next steps
 
-To be continued
+Let see how one can simplify the process of [maintaing lots of CSV import rules](Maintaining-CSV-rules).
