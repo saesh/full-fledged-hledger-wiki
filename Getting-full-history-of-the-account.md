@@ -1,8 +1,8 @@
 > Associated directory: [03-getting-full-history](../tree/master/03-getting-full-history)
 
 Now that a single statement is successfully imported, grab all of them
--- as many as you can get your hands on. Let's assume that you can get
-4 years worth of statements, from 2014 to 2017, even though account
+-- as many, as you can get your hands on. Let's assume that you can get
+4 years worth of statements, from 2014 to 2017, even though the account
 was opened earlier than that.
 
 Save them all in the same `import/lloyds/in` directory
@@ -35,7 +35,7 @@ I deliberately chose file names that do not reflect which year's data
 they contain - in my experience, financial institutions are often
 unhelpful this way.
 
-Now we just need to `!include` theses journals into our yearly files
+Now we just need to `!include` these journals into our yearly files
 and run `./export.sh` ... however, we do not have journal files for years
 2014, 2015 and 2016 yet.
 
@@ -66,7 +66,7 @@ First of all, opening balances previously recorded in `2017.journal`
 are not relevant anymore and need to be removed and new, different
 opening balances record needs to be added to `2014.journal` instead.
 
-But what about opening balances for year 2015, 2016 and 2017?
+But what about opening balances for the year 2015, 2016 and 2017?
 
 As a rule, people usually don't want to retain the detailed record of
 expenses once the year is over and start expense tracking for the
@@ -79,9 +79,9 @@ You could, of course, compute and maintain opening balances
 transactions for all years manually, but this is tedious and
 error-prone.
 
-Alternative is to observe that opening balances for 2015 should be
+An alternative is to observe that opening balances for 2015 should be
 exactly the final balances in all assets and liabilities accounts at
-the end of 2014. Same for the 2016: it should open with the balances
+the end of 2014. Same for 2016: it should open with the balances
 at the end of 2015 and so on.
 
 Luckily, set of reports that `export.hs` will generate for the year
@@ -125,7 +125,7 @@ before the start of year 2015. Lets modify `all.journal`:
 
 New statement files might require new conversion rules. In this
 example, there would be a couple of transactions that send money to
-the savings account, which we will cover later. For now, lets add a
+the savings account, which we will cover later. For now, let's add a
 rule to `lloyds.rules` to make sure it converts properly:
 ```
 if
@@ -221,7 +221,7 @@ This is how everything should work at this point:
 ```
 
 Files in `import` are being cleaned up and converted from CSV to
-journal format. Converted journal files are included into your yearly
+ the journal format. Converted journal files are included into your yearly
 journals. Build rules in `export.hs` produce summary reports and
 `export/<year>-opening.journal` and `export/<year>-closing.journal`.
 Those opening/closing balance journals are, in turn, included into
