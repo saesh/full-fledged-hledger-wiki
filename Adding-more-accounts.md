@@ -40,7 +40,7 @@ file). Apart from that, the rest is easy -- you drop statements in
 and it should just work.
 
 However, it would not be a stretch to assume that you have moved funds
-between these accounts, and each transfer would be present in _two_
+between these accounts and each transfer would be present in _two_
 statements - once for source account and once for destination account.
 This would mean that account balances (and balance assertions) will
 not be right.
@@ -70,10 +70,10 @@ like this:
 The trick here is to make both transfers face imaginary `transfers`
 account, so current account statement will contain a transaction
 moving funds from `assets:Lloyds:current` to `transfers`, and line in
-savings account statement will generate a transaction moving funds
+the savings account statement will generate a transaction moving funds
 from `transfers` to `assets:Lloyds:savings`.
 
-From `transfers` perspective, money will move in and out, and account will be left flat:
+From the `transfers` perspective, money will move in and out, and the account will be left flat:
 ```
 ; In current account statement
 2017-12-02 Transfer to savings
@@ -92,11 +92,25 @@ that could be seen in the directory
 or in the [diffs/03-to-04.diff](../tree/master/diffs/03-to-04.diff).
 
 Now when you run
-`./export.sh`, you can use version control system to verify
+`./export.sh`, you can use the version control system to verify
 that end-of-year balances for the current account are unchanged, which
 will mean that we are not double-counting transfers (you did put all generated reports under version control, didn't you?).
 
+## More on transfers and double-counting
+
+You could come across the double-counting issue in different cases, but most of them would be similar to the one just described: 
+- the problem will be introduced when you add a new data source
+- the problem could be solved by introducing a new intermediate account.
+
+For example:
+
+**Problem**: you used to direct PayPal transactions in your main bank account to `expenses:PayPal`, but now you want to start parsing PayPal statements. How should you parse "money in" lines from PayPal files?
+
+**Solution**: change rules for you bank account to send PayPal transactions to `assets:PayPay:top-up`. Create rules for PayPal files to set `account1` on money-in transactions to `assets:PayPal:top-up` as well.
+
+Same applies to Amazon purhases (once you start importing Amazon statements), cryptocurrency exchanges, various debit card providers (Revolut, Monzo, N26, Starling, ...) and pretty much any other acccount that you would fund from your primary account and which could provide its own reports/statements.
+
 ## Next steps
 
-Now you can start getting your data in shape, for example you can
+Now you can start getting your data in shape, for example, you can
 start to classify expenses by [tweaking your CSV import rules](Improving-CSV-import-rules).
