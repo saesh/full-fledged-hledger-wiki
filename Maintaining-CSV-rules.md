@@ -47,4 +47,4 @@ See the changes in [06-maintaining-lots-of-csv-rules](../tree/master/06-maintain
 
 ## Next steps
 
-To be continued
+Now that importing basic statements should not be an issue anymore, we can tackle more complex subjects, such as [tracking investments](Investments-easy-approach).

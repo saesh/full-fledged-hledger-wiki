@@ -7,4 +7,5 @@
 4. [Adding more accounts](Adding-more-accounts)
 5. [Creating CSV import rules](Creating-CSV-import-rules)
 6. [Maintaining CSV rules](Maintaining-CSV-rules)
+7. [Investments - easy approach](Investments-easy-approach)
 6. [ChangeLog](Changelog)
