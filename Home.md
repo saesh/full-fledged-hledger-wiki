@@ -40,17 +40,9 @@ directory.
 
 If you are fairly experienced with ledger, hledger, beancount or any
 other plain-text accounting tool, you might want to quickly check out
-[Directory structure](Directory-structure) to see how things are laid
-out and then head directly to the most featureful
+[key principles and practices](Key-principles-and-practices) to see
+how things are laid out and then head directly to the most featureful
 (most-highly-numbered) directory and take a look around to see how
 everything is done. Run `./export.sh` to generate all reports and see
 what is being processed and how. If things dont make sense, start at
-the beginning.
-
-Full guide reads in the following order1:
-
-0. [Directory structure](Directory-structure)
-1. [Getting started](Getting-started)
-2. [Getting data in](Getting-data-in)
-3. [Getting full history of the account](Getting-full-history-of-the-account)
-4. [Adding more accounts](Adding-more-accounts)
+the beginning, and proceed in the order displayed on the sidebar.

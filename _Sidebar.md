@@ -1,6 +1,6 @@
 [Home](Home)
 
-0. [Directory structure](Directory-structure)
+0. [Key principles and practices](Key-principles-and-practices)
 1. [Getting started](Getting-started)
 2. [Getting data in](Getting-data-in)
 3. [Getting full history of the account](Getting-full-history-of-the-account)
