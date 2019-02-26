@@ -26,7 +26,7 @@ ones (more information is available, etc), you would be able to
 regenerate all past statements and see what was changed and convince
 yourself that numbers will stay the same.
 
-If you generate any reports on the regular basis (balance sheet,
+If you generate any reports on a regular basis (balance sheet,
 income-expenses, etc) - make scripts to generate them and put them
 under version control. Now you can change your journal files however
 you like and you would be able to check changes in the reports to
@@ -55,7 +55,7 @@ your journals.
 
 Manual entries take time. They would probably take more time and
 effort than the rest of the stuff related to keeping your finances in
-check, combined. Think whether you want to track all those cash
+check, combined. Think about whether you want to track all those cash
 expenses. Do you need to? 
 
 For example, all ATM transactions in my bank accounts are done versus
@@ -66,7 +66,7 @@ the same -- unless you handle a lot of cash.
 # Split your journals by year
 
 This makes things faster and also allows you to reset your expenses at
-a reasonable interval. Hledger and ledger have helpful `equity`
+a reasonable interval. Hledger and ledger have a helpful `equity`
 command to simplify the process, but you can simplify it even further
 with some scripting. 
 
@@ -85,16 +85,16 @@ compared to mass search and replace over report files.
 
 It is relatively easy to find yourself with a setup where you drop
 fresh CSV statements in a directory from time to time, run a couple of
-scripts, review changes in version control system, and you are done
+scripts, review changes in a version control system, and you are done
 with next batch of reconciliation. 
 
 Freed-up time can be used to get more statements from more sources
 that will provide you with a more fine-grained picture. For example,
 you might pay off your credit card from your current account every
-month, and these lump-sump expenses went into `expenses:credit card`,
+month and these lump-sump expenses went into `expenses:credit card`,
 but now you can consider getting detailed statements from credit card
 provider. Now transactions that pay off your outstanding balance can
-go to `liabilities:credit card:balance payments` and credit card
+go to `liabilities:credit card:balance payments` and the credit card
 statement could be processed so that credit card spending goes from
 `liabilities:credit card` to various `expenses:...` accounts, and
 credit card balance payments go from `liabilities:credit card:balance
@@ -124,7 +124,7 @@ aggregate reports react accordingly.
   of `!include` lines
 
 * Next to it are a bunch of `{year}.journal` files that will have: 
-  1. `!include` of the opening balances file carrying over your assets/liabilities from previous year; 
+  1. `!include` of the opening balances file carrying over your assets/liabilities from the previous year; 
   2. a bunch of `!include`s for all the converted CSV files; 
   3. **all manual transactions that you have for that year**
 
@@ -143,7 +143,7 @@ Why is `all.journal` structured the way it is?
 
 Why per-year files at all?
 
-Do they have to start on January?
+Do they have to start in January?
 
 What do I do to start a new year?
 
@@ -155,5 +155,5 @@ I love single wiki page that contains all the answers as much as the
 next man. Unfortunately, my attempts to write a single page that fully
 describes my setup had failed miserably, and the best I can offer you
 is to head to [Getting started](Getting-started) and read the rest
-of the wiki - it is not too large, and hopefully you would be able to
+of the wiki - it is not too large, and hopefully, you would be able to
 skip over large sections that explain things you already know.
