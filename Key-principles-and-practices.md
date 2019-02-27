@@ -1,16 +1,17 @@
-> NB: If you are just starting with hledger, this section would
-> definitely overwhelm you. Skip it entirely - everything contained
-> here will be introduced in subsequent sections.
->
-> However, if you are experienced and impatient hledger user who does
-> not want to read through the whole wiki or just want a refresher,
-> then this section might be for you.
-
 # Motivation
 
-Even if you would not adopt my setup, you could try and see whether my
-principles and practices resonate with you. If you end up implementing
-them differently -- or better -- please drop me a line.
+I know that it reading time is a precious commodity. You should probably skim this page to see whether my
+principles and practices resonate with you. 
+
+If you do like them - [keep reading](Getting-started). Even if you would not end up using my setup, maybe you will find some useful ideas to adopt.
+
+NB: If you are just starting with hledger, this section could
+overwhelm you. If it happens -- skip it entirely for now. Everything contained
+here will be introduced in subsequent sections, and you can revisit it at a later time.
+
+However, if you are experienced (and potentially impatient) hledger user who does
+not want to read through the whole wiki or just wants a quick summary, then this section might be all you need.
+
 
 # Version control everything
 
