@@ -1,8 +1,12 @@
 ChangeLog
 
-- 2018-02 Initial version, announcement
+- 2019-02-27 New sections
 
-- 2019-02 Massive rewrite:
+	- added section on rules in psv files
+
+	- added section on investments
+
+- 2019-02-25 Massive rewrite:
 
 	- no more git branches
 
@@ -13,6 +17,5 @@ ChangeLog
 
 	- export.hs now tracks and rebuils journals from CSV files
 
-	- added section on rules in psv files
+- 2018-02 Initial version, announcement
 
-	- added section on investments
