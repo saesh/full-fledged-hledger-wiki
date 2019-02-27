@@ -125,4 +125,4 @@ investment report.
 
 ## Next step
 
-To be continues. Probably mortgages.
+To be continued. Probably mortgages.
