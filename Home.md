@@ -1,3 +1,20 @@
+# "Full-fledged Hledger" Tutorial
+
+Full-Fledged Hledger is a tutorial on how to setup up hledger to get:
+- data split into files by year
+- multi-source CSV imports
+- range of auto-generated reports
+- single script to update all reports when any source file change
+- full freedom to evolve and refactor your journals as you see fit
+- and more
+
+# What is included?
+
+A set of sample journals and helper scripts that I use together with [hledger](http://hledger.org) for tracking personal finances
+and budgeting. It should be easily adaptable to other command-line accounting tools (ledger, beancount, ...).
+
+I went through several different approaches over the course of 10 years, and this is the end result of that journey, complete with "how", "why" and lessons learned. 
+
 # Goals
 
 I wanted a setup that would satisfy three major requirements:
