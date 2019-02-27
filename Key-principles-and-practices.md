@@ -7,7 +7,7 @@ If you do like them - [keep reading](Getting-started). Even if you would not end
 
 NB: If you are just starting with hledger, this section could
 overwhelm you. If it happens -- skip it entirely for now. Everything contained
-here will be introduced in subsequent sections, and you can revisit it at a later time.
+here will be introduced in subsequent sections, and you can revisit this page at a later time.
 
 However, if you are experienced (and potentially impatient) hledger user who does
 not want to read through the whole wiki or just wants a quick summary, then this section might be all you need.
