@@ -20,7 +20,7 @@ At the very least there is one initial payment.
 
 3. Value of your investment changes over time and you record this in
 your journal. You might receive period valuation document or emails
-from financial institution where you keep your savings. Or you might
+from the financial institution where you keep your savings. Or you might
 go online and check the value of your investment. Either way, you
 record the numbers in your journal, and if my experience is any
 indication, you probably do not have a way to automatically import
@@ -58,9 +58,9 @@ transactions, like this:
 
 ## Computing return on investment
 
-Hledger includes "return on investment" command accessible as `hledger
+Hledger includes a "return on investment" command accessible as `hledger
 roi`. You need to point it to the account that tracks your investments
-and account that balances you valuation transactions, and it will
+and account that balances your valuation transactions, and it will
 calculate for you two numbers: internal (or money-weighted) rate of return and
 time-weighted rate of return.
 
@@ -80,7 +80,7 @@ portfolio.
 This rate is called money-weighted or dollar-weighter rate of return
 or **internal rate of return -- IRR for short**.
 
-**Time weighted returns (TWR)** on the other hand ignores the effect
+**Time weighted returns (TWR)** on the other hand, ignores the effect
 of cash inflows/outflows, but recognizes that different periods of
 time have different rates of return and attempts to tell you what is
 the performance of your investment portfolio over time that you held
