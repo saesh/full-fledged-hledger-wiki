@@ -2,7 +2,7 @@
 
 I assume that you want to keep track of your finances with
 [hledger](http://hledger.org). You have read
-[hledger step-by-step guide](http://hledger.org/step-by-step.html#useful-accounting-concepts),
+[hledger basics tutorial](https://github.com/simonmichael/hledger/wiki/hledger-basics-tutorial) and [hledger accounting concepts](https://github.com/simonmichael/hledger/wiki/hledger-accounting-concepts),
 and you know the difference between "assets", "liabilities", "equity",
 "income" and "expenses".
 
