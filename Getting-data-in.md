@@ -2,8 +2,7 @@
 
 ## Downloading files
 
-The easiest place to start is with your main account. Normally it would be the account that you use to fund most of your day-to-day expenses. It is probably a checking/debit/credit card account at the bank of your choice or
-a combination of several of them.
+The easiest place to start is with your main account. Normally it would be the account that you use to fund most of your day-to-day expenses. It is probably a checking/debit/credit card account at the bank of your choice. If you have several of them -- just pick one for now, we will deal with the rest shortly.
 
 You would want to get CSV statements for your account covering a
 reasonable period of time. You can start small: get a statement for
