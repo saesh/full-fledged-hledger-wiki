@@ -106,7 +106,7 @@ control you should be able to diff them against the previous version
 and see exactly what has changed where at a glance.
 
 You will notice that import rules put all expenses in the single
-`expenses` account. That's fine, let's assume that you do not have
+`expenses:unknown` account. That's fine, let's assume that you do not have
 time to sort them out just now, we will do this later.
 
 ## Recap
