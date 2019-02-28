@@ -22,7 +22,7 @@ I wanted a setup that would satisfy three major requirements:
 - Tracking expenses should take as little time, effort and manual work as possible.
 
 - It should be easy to work towards eventual consistency. Large and
-  danting tasks (like "I will process 10 years of paper mortgage
+  daunting tasks (like "I will process 10 years of paper mortgage
   statements" or "I want to import 5 years of paypal payments") should
   not require one big push and perfect planning to finish them.
   Instead I should be able to do them bit by little bit, leaving
