@@ -92,7 +92,7 @@ with next batch of reconciliation.
 Freed-up time can be used to get more statements from more sources
 that will provide you with a more fine-grained picture. For example,
 you might pay off your credit card from your current account every
-month and these lump-sump expenses went into `expenses:credit card`,
+month and these lump-sum expenses went into `expenses:credit card`,
 but now you can consider getting detailed statements from credit card
 provider. Now transactions that pay off your outstanding balance can
 go to `liabilities:credit card:balance payments` and the credit card
