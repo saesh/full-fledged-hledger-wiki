@@ -1,3 +1,6 @@
+> Associated directory:
+> [08-mortgage](../tree/master/08-mortgage)
+
 ## Where is the complexity
 
 When you take out a mortgage (or any other loan) you usually set up a periodic repayment plan.
