@@ -50,11 +50,6 @@ There is a bit of Catch-22 here, though - if generated file is `!include`d into 
 
 Fortunately, `hledger-interest` does not need any of the transactions it is about to generate, so we can temporarily create a completely empty mortgage interest payments file, run `hledger-interest`, and put generated data into the file.
 
-Unfortunately, as mortgage payments file(s) are being generated or regenerated, your balance assertions (opening and closing balances) might temporarily be out of whack, and `hledger-interest` cannot be instructed to ignore them.
-Also, `hledger-interest` is built against slightly dated `hledger-lib`, so it might get confused about more advanced features which appeared in the later versions of `hledger` (if you use them in your journals).
-
-Fortunately, we can use `hledger` to extract necessary data while ignoring balance assertions, and then feed them into `hledger-interest`. 
-
 All of this could be encoded as a simple script and a rule in `export.hs`, which you can see in [08-mortgage](../tree/master/08-mortgage) or [diffs/07-to-08.diff](../tree/master/diffs/07-to-08.diff).
 
 ## Next steps
