@@ -39,7 +39,7 @@ I believe that have a setup that allows you to do all that, and more.
 # Structure
 
 It is relatively easy to describe *what* I am doing, but it is harder
-to descibe *why*. The easiest way to to answer all the *why* questions
+to describe *why*. The easiest way to to answer all the *why* questions
 is to illustrate how one can grow a setup from scratch, gradually
 introducing problems and solutions.
 
