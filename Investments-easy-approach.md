@@ -125,4 +125,4 @@ investment report.
 
 ## Next step
 
-To be continued. Probably mortgages.
+Lets talk about [mortgages](Mortgage).

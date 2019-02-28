@@ -1,6 +1,8 @@
 ChangeLog
 
-- 2019-02-27 New sections
+- 2019-02-27 docker.sh, section on mortgages
+
+- 2019-02-26 New sections
 
 	- added section on rules in psv files
 
