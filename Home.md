@@ -23,8 +23,8 @@ textutils/shellutils available. I have not tested them on Mac OS or
 Windows. I expect Mac OS to mostly work and Windows users can
 use Docker (see below).
 
-You will need to have `shake` build system installed (which you can
-get via `stack install shake`). 
+Automation is done using [shake](https://shakebuild.com/) build system, which would be automatically installed
+first time you run report generation script. 
 
 ## Docker
 
