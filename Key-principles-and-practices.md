@@ -1,6 +1,6 @@
 # Motivation
 
-I know that it reading time is a precious commodity. You should probably skim this page to see whether my
+I know that reading time is a precious commodity. You should probably skim this page to see whether my
 principles and practices resonate with you. 
 
 If you do like them - [keep reading](Getting-started). Even if you would not end up using my setup, maybe you will find some useful ideas to adopt.
