@@ -15,6 +15,23 @@ and budgeting. It should be easily adaptable to other command-line accounting to
 
 I went through several different approaches over the course of 10 years, and this is the end result of that journey, complete with "how", "why" and lessons learned. 
 
+# What do I need to run it?
+
+Scripts and files here assume Linux-like environment with Haskell (in
+particular, you will need `runhaskell` and `stack`) and
+textutils/shellutils available. I have not tested them on Mac OS or
+Windows. I expect Mac OS to mostly work and Windows users can
+use Docker (see below).
+
+You will need to have `shake` build system installed (which you can
+get via `stack install shake`). 
+
+## Docker
+
+Windows users or those unwilling to set up `stack` can follow the tutorial with the help of docker image.
+
+After cloning the repo, run `./docker.sh`, which will mount current directory inside docker image that contains all the necessary software and start up shell there.
+
 # Goals
 
 I wanted a setup that would satisfy three major requirements:
