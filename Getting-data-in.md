@@ -129,15 +129,6 @@ You will notice that import rules put all expenses in the single
 `expenses:unknown` account. That's fine, let's assume that you do not have
 time to sort them out just now, we will do this later.
 
-## What is this export.sh thing?
-
-Script `export.sh` is a one-liner that invokes `export/export.hs`, where the real magic lies. That file
-uses `shake` - build system written in Haskell - to automate all conversion and report generation tasks.
-Entire contents of `export/export.hs` is build rules with small amount of customizeable information at the top -- like
-current year and list of reports you want to generate.
-
-`Shake` was chosen mainly for its ability to handle complex dependencies easily.
-
 ## Recap
 
 I've included a sample data file and conversion scripts in
