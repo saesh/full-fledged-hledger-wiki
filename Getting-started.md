@@ -10,7 +10,9 @@ However, it is hard to begin: which accounts one should create and
 maintain? How to deal with multiple years and multiple banks? What if
 you later decide to change something?
 
-Let's get started. Look into [01-getting-started](../tree/master/01-getting-started), where you will find a completely empty journal for the current year (at the time of writing - 2017) and a couple of export scripts.
+Let's get started with an empty journal.
+
+Look into [01-getting-started](../tree/master/01-getting-started), where you will find a completely empty journal for the current year (at the time of writing - 2017) and a couple of export scripts.
 Check that the current year is properly reflected at the top of
 `./export/export.hs`:
 
@@ -21,6 +23,17 @@ Check that the current year is properly reflected at the top of
 first   = 2017 :: Int
 current = 2017
 ```
+
+## What is this export.sh thing?
+
+Script `export.sh` is a one-liner that invokes `export/export.hs`, where the real magic lies. That file
+uses `shake` - build system written in Haskell - to automate all conversion and report generation tasks.
+Entire contents of `export/export.hs` is build rules with small amount of customizeable information at the top -- like
+current year and list of reports you want to generate.
+
+`Shake` was chosen mainly for its ability to handle complex dependencies easily.
+
+## Lets run it!
 
 Now run `./export.sh`, and a bunch of files would be generated in `./export`:
 ```
@@ -48,14 +61,6 @@ this - they would show that various totals are zero and pretty much
 nothing else. Commit all of them into the version control system of your
 choice.
 
-## What is this export.sh thing?
-
-Script `export.sh` is a one-liner that invokes `export/export.hs`, where the real magic lies. That file
-uses `shake` - build system written in Haskell - to automate all conversion and report generation tasks.
-Entire contents of `export/export.hs` is build rules with small amount of customizeable information at the top -- like
-current year and list of reports you want to generate.
-
-`Shake` was chosen mainly for its ability to handle complex dependencies easily.
 
 ## Next steps
 
