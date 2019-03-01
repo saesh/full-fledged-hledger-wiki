@@ -1,6 +1,6 @@
 > Associated directory: [02-getting-data-in](../tree/master/02-getting-data-in)
 
-## Downloading files
+## Where to begin?
 
 The easiest place to start is with your main account. Normally it would be the account that you use to fund most of your day-to-day expenses. It is probably a checking/debit/credit card account at the bank of your choice. If you have several of them -- just pick one for now, we will deal with the rest shortly.
 
@@ -12,6 +12,26 @@ chapters). For now, let's save that single statement in
 `./import/<institution name>/in`. For example, my current account was
 once with Lloyds and so their statements will go into
 `./import/lloyds/in/{filename}.csv`. From now on I will keep using Lloyds as an example.
+
+## Downloading files and statement periods
+
+If you are lucky, your bank would allow you to export arbitrary range
+of transactions, and you would be able to pick the convention that
+suits you best. For example, you might want to export at most one file
+per year or per quarter or per month.
+
+However, financial institutions could be rather arbitrary in what they
+provide. You might be getting monthly statements, but generated on
+15th of the month (so the inconveniently cross year boundary). Or
+maybe maximum amount of rows in the statement will be limited (I saw
+this in real life).
+
+Or you might want to just download transactions from the last date you
+previously grabbed files from this financial institution, however many
+days that might be.
+
+This should not matter much. Save as many or as few files as you want,
+combine them or split them. Multiple files does not mean additional processing overhead.
 
 ## Conversion scripts
 

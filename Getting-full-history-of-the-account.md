@@ -1,9 +1,14 @@
 > Associated directory: [03-getting-full-history](../tree/master/03-getting-full-history)
 
 Now that a single statement is successfully imported, grab all of them
--- as many, as you can get your hands on. Let's assume that you can get
-4 years worth of statements, from 2014 to 2017, even though the account
-was opened earlier than that.
+-- as many, as you can get your hands on. Your bank might allow you to
+download all transactions in a single file, but more often you will
+need to download multiple files, working with whatever arbitrary
+restrictions your bank has in place.
+
+Let's assume that you can get 4 years worth of statements, one per
+year, for a period from 2014 to 2017, even though the account was
+opened earlier than that.
 
 Save them all in the same `import/lloyds/in` directory
 as your already-converted statement. Even though `import/lloyds/csv`
@@ -187,15 +192,15 @@ make sure that journal for the earliest year (in our case -
 This is how everything should work at this point:
 
 ```
-                                import/loyds/in/*
+                                import/lloyds/in/*
                                            +
                                            |  in2csv
                                            v
-                                import/loyds/csv/*
+                                import/lloyds/csv/*
                                            +
                                            |  csv2journal
                                            v
-                                import/loyds/journal/*
+                                import/lloyds/journal/*
                                            +
       +--------------------------------------------------------------------------+
       |                       |                        |                         |
