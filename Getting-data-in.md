@@ -41,7 +41,7 @@ scrubbing. Let's say that in our example I want to remove extra
 spaces from the description field and replace numeric account names
 with human-readable ones -- even though it is not necessary to import
 my sample file, I want to demonstrate how clean-up script could be
-written and ran. Lets place the clean-up script in `./import/lloyds/in/in2csv`:
+written and ran. Lets place the clean-up script in `./import/lloyds/in2csv`:
 ```
 #!/bin/bash
 sed -e 's/  +/ /g; s/,99966633,/,assets:Lloyds:current,/' < "$1"
