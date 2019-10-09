@@ -114,6 +114,8 @@ or [diffs/06-to-07.diff](../tree/master/diffs/06-to-07.diff), where
 I've added a couple of valuation transactions and a script to compute
 investment report.
 
+You can see example report [here](../tree/master/07-investments-easy-approach/export/investments.txt)
+
 ## References
 
 * TWR computations used here are described in a lot of detail on
