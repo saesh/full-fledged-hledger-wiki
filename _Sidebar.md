@@ -9,4 +9,5 @@
 6. [Maintaining CSV rules](Maintaining-CSV-rules)
 7. [Investments - easy approach](Investments-easy-approach)
 8. [Mortgages](Mortgage)
+8. [Remortgage](Remortgage)
 6. [ChangeLog](Changelog)
