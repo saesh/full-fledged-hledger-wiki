@@ -1,5 +1,5 @@
 > Associated directory:
-> [08-remortgage](../tree/master/09-remortgage)
+> [09-remortgage](../tree/master/09-remortgage)
 
 ## How to handle changes in mortgage conditions
 
