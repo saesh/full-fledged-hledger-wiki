@@ -37,7 +37,7 @@ YYYY-MM-DD  Taking out the mortgage
 
 ## Computing capital payments
 
-Now you need to run `hledger-interest` on `liabilities:mortgage` account, telling it to take interest payments out of `expenses:house:mortgage interest` and back into `liabilities:mortgage` (warning: `--source` and `--targe` semantics seems a bit opposite to what one would expect):
+Now you need to run `hledger-interest` on `liabilities:mortgage` account, telling it to take interest payments out of `expenses:house:mortgage interest` and back into `liabilities:mortgage` (warning: `--source` and `--target` semantics seems a bit opposite to what one would expect):
 ```
 hledger-interest liabilities:mortgage \
    --source='expenses:house:mortgage interest' \
