@@ -40,7 +40,7 @@ I deliberately chose file names that do not reflect which year's data
 they contain - in my experience, financial institutions are often
 unhelpful this way.
 
-Now we just need to `!include` these journals into our yearly files
+Now we just need to `include` these journals into our yearly files
 and run `./export.sh` ... however, we do not have journal files for years
 2014, 2015 and 2016 yet.
 
@@ -48,19 +48,19 @@ and run `./export.sh` ... however, we do not have journal files for years
 ## Adding new years
 
 Let's start with the obvious: create `2014.journal`, `2015.journal`
-and `2016.journal`, each of which will contain a single `!include`
+and `2016.journal`, each of which will contain a single `include`
 line for one of the `.journal` files we are about to produce. For
 example, `2015.journal` will look like this:
 ```
-!include ./import/lloyds/journal/99966633_20171224_2042.journal
+include ./import/lloyds/journal/99966633_20171224_2042.journal
 ```
 
 Include new years in `all.journal`:
 ```
-!include 2014.journal
-!include 2015.journal
-!include 2016.journal
-!include 2017.journal
+include 2014.journal
+include 2015.journal
+include 2016.journal
+include 2017.journal
 ```
 
 ## On the opening balances
@@ -96,8 +96,8 @@ Luckily, set of reports that `export.hs` will generate for the year
 Lets modify `2015.journal` to include opening balances from the end of
 2014:
 ```
-!include ./export/2015-opening.journal
-!include ./import/lloyds/journal/99966633_20171224_2042.journal
+include ./export/2015-opening.journal
+include ./import/lloyds/journal/99966633_20171224_2042.journal
 ```
 
 Do the same for `2016.journal` and `2017.journal`.
@@ -117,13 +117,13 @@ contains a transaction which zeroes out all assets and liabilities (vs
 `equity:closing balances` account) which could be included right
 before the start of year 2015. Lets modify `all.journal`:
 ```
-!include 2014.journal
-!include ./export/2014-closing.journal
-!include 2015.journal
-!include ./export/2015-closing.journal
-!include 2016.journal
-!include ./export/2016-closing.journal
-!include 2017.journal
+include 2014.journal
+include ./export/2014-closing.journal
+include 2015.journal
+include ./export/2015-closing.journal
+include 2016.journal
+include ./export/2016-closing.journal
+include 2017.journal
 ```
 
 ## CSV import rules might need to change
@@ -240,7 +240,7 @@ balances should look right.
 
 This whole setup with `opening` and `closing` files sounds awfully
 complicated -- why does it seem like a good idea? After all, you can
-just `!include` all the converted files into `all.journal` and not
+just `include` all the converted files into `all.journal` and not
 split things by year. Then there would be no issues with closing and re-opening balances,
 and things would get simpler -- or so it seems.
 

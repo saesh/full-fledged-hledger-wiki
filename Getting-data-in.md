@@ -108,7 +108,7 @@ Finally, everything is in place to convert the downloaded file
 and to `.journal`.
 
 Here is a crucial bit: instead of copying the contents of that file
-into your journal for the current year, lets just `!include` it, so now your
+into your journal for the current year, lets just `include` it, so now your
  `2017.journal` will look like this:
 ```
 ;; Opening balances
@@ -116,7 +116,7 @@ into your journal for the current year, lets just `!include` it, so now your
   assets:Lloyds:current    = £100
   equity:opening balances
   
-!include ./import/lloyds/journal/99966633_20171223_1844.journal
+include ./import/lloyds/journal/99966633_20171223_1844.journal
 ```
 
 Now you can run `./export.sh`. This will automatically run `in2csv`

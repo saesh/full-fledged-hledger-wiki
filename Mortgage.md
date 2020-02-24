@@ -49,11 +49,11 @@ This will print out a document in the journal format, which you can include into
 
 ## Automation
 
-There is a bit of Catch-22 here, though - if generated file is `!include`d into your yearly journal, how can you feed it into `hledger-interest`, which is supposed to generate it in the first place?
+There is a bit of Catch-22 here, though - if generated file is `include`d into your yearly journal, how can you feed it into `hledger-interest`, which is supposed to generate it in the first place?
 
 Additionally, interest transactions will modify balance of the mortgage account. What would happen when we run `hledger-interest` second time - would it not be confused by its own transactions?
 
-Fortunately, we can temporarily create a completely empty mortgage interest payments file so that yearly journal will not have any broken `!include`s, run `hledger-interest`, and put generated data into the file.
+Fortunately, we can temporarily create a completely empty mortgage interest payments file so that yearly journal will not have any broken `include`s, run `hledger-interest`, and put generated data into the file.
 And in the future, we can use `hledger print` to ignore mortgage interest payment transactions as we feed journal into `hledger-interest`. 
 
 All of this could be encoded as a simple script and a rule in `export.hs`, which you can see in [08-mortgage](../tree/master/08-mortgage) or [diffs/07-to-08.diff](../tree/master/diffs/07-to-08.diff).

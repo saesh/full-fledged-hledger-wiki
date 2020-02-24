@@ -36,7 +36,7 @@ import
 You will need to modify the CSV conversion rules to make sure that
 `account1` is properly set (or inferred from a column in the input
 file). Apart from that, the rest is easy -- you drop statements in
-`./in`, `!include` generated journals as necessary, run `./export.sh`
+`./in`, `include` generated journals as necessary, run `./export.sh`
 and it should just work.
 
 However, it would not be a stretch to assume that you have moved funds

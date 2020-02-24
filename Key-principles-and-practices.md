@@ -33,10 +33,10 @@ under version control. Now you can change your journal files however
 you like and you would be able to check changes in the reports to
 convince yourself that your journal changes are good and complete. 
 
-# Keep source files separate and use !include a lot
+# Keep source files separate and use `include` a lot
 
 When you convert electronic statements, produce one .journal file per
-statement converted, put them under version control and !include them
+statement converted, put them under version control and `include` them
 in your journal. Now, if your statements ever change, you would be
 able to re-generate corresponding .journal file and aggregate reports
 (like balance sheet) and see the changes that happened at every step
@@ -122,11 +122,11 @@ aggregate reports react accordingly.
   
 * At the top level there is `all.journal` which is the main entry
   point for all of your financial history. It contains just a bunch
-  of `!include` lines
+  of `include` lines
 
 * Next to it are a bunch of `{year}.journal` files that will have: 
-  1. `!include` of the opening balances file carrying over your assets/liabilities from the previous year; 
-  2. a bunch of `!include`s for all the converted CSV files; 
+  1. `include` of the opening balances file carrying over your assets/liabilities from the previous year; 
+  2. a bunch of `include`s for all the converted CSV files; 
   3. **all manual transactions that you have for that year**
 
 * Raw CSV files go into `./import/{source}/in`
