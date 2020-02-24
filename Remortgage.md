@@ -1,6 +1,10 @@
 > Associated directory:
 > [09-remortgage](../tree/master/09-remortgage)
 
+## UNDER CONSTRUCTION
+
+This advise is buggy, and this page is waiting for hledger-interest 1.5.4 to be released
+
 ## How to handle changes in mortgage conditions
 
 If at a certain point you decide to re-mortgage, chances are that your new mortgage conditions would be different.
