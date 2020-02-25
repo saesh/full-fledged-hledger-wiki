@@ -1,5 +1,7 @@
 ChangeLog
 
+- 2020-02-25 Fixed section on remortgage
+
 - 2019-10-09 section on remortgage
 
 - 2019-02-27 docker.sh, section on mortgages

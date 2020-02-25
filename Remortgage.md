@@ -18,6 +18,8 @@ With `hledger-interest` 1.5.4 or above, there is an easier way: you can specify 
 hledger-interest --annual-schedule='[(2017-01-01, r1), (2019-04-05, r2)]' <rest of the arguments>
 ```
 
+Initial date does not have to be precise, it just has to be on or before first mortgage payment. It is perfectly ok to set it way in the past.
+
 Modified mortgage-interest script that demonstrates this could be found in [09-remortgage](../tree/master/09-remortgage) or [diffs/08-to-09.diff](../tree/master/diffs/08-to-09.diff).
 
 ## Next steps
