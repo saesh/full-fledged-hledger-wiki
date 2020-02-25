@@ -11,14 +11,14 @@ If at a certain point you decide to re-mortgage, chances are that your new mortg
 
 Typically, your interest rate would change, which means that the script that computes interest payments should change as well.
 
-The easiest way to handle the change would be to pre-filter input to `hledger-interest` with `hledger print` so that it will see transactions only up to the month when you re-mortgaged and then post-filter the output to the same perior (to exclude an entry for `today` that `hledger-interest` will generate).
+If you are using `hledger-interest` version 1.5.3 or below you will need to pre-filter output of `hledger-interest` with `hledger print` so that only transactions up to the month when you re-mortgaged are emitted, and then use this output to compute final balance at the time of remortgage, and then send your journal to `hledger-interest` again, this time prefiltered so that only post-remortgage transactions are included, and also throw remortgage day balance in the mix. Nothing that cannot be achieved with 20-100 lines of bash or python :) And next time you would probably avoid remortgaging just so that you will not have to fix this script again.
 
-Once you've done that, you could duplicate your `hledger-interest` invocation, but change the filters so that
-they limit input and output to the period after remortgage, and change interest rate accordingly.
+With `hledger-interest` 1.5.4 or above, there is an easier way: you can specify rate schedule. If your old rate `r1` was effective from 2017-01-01, and your new rate `r2` is effective from 2019-04-05, then `hledger-interest` could be invoked with your rate schedulek like this:
+```
+hledger-interest --annual-schedule='[(2017-01-01, r1), (2019-04-05, r2)]' <rest of the arguments>
+```
 
-Since mortgage interest script works on a year by year basis, both `hledger-interest` invocations will essentially work on intersection of appropriate mortgage period and requested year. If the interesection is empty, nothing will be computed (as expected).
-
-Modified script could be found in [09-remortgage](../tree/master/09-remortgage) or [diffs/08-to-09.diff](../tree/master/diffs/08-to-09.diff).
+Modified mortgage-interest script that demonstrates this could be found in [09-remortgage](../tree/master/09-remortgage) or [diffs/08-to-09.diff](../tree/master/diffs/08-to-09.diff).
 
 ## Next steps
 
