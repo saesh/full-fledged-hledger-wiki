@@ -119,6 +119,11 @@ into your journal for the current year, lets just `include` it, so now your
 include ./import/lloyds/journal/99966633_20171223_1844.journal
 ```
 
+Note that **build rules would not automatically convert all `.csv` files in `import` to `.journal`**. 
+
+You have to write an `include` line for the newly-downloaded statement in your yearly journal, 
+which will add it to the list of files that would be built/updated from now on.
+
 Now you can run `./export.sh`. This will automatically run `in2csv`
 and `csv2journal` scripts with the right set of arguments and
 regenerate all your reports. If you are keeping reports under version
