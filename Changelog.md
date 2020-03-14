@@ -1,5 +1,8 @@
 ChangeLog
 
+- 2020-03-14 Added commandline options to override first, current year and
+	  base directory
+
 - 2020-03-05 Updated for hledger 1.17
 
 - 2020-02-25 Fixed section on remortgage

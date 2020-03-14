@@ -20,8 +20,8 @@ Check that the current year is properly reflected at the top of
 --
 -- Range of years to report. You would typically want all the years you have data for.
 --
-first   = 2017 :: Int
-current = 2017
+defaultFirstYear   = 2017 :: Int
+defaultCurrentYear = 2017
 ```
 
 ## What is this export.sh thing?

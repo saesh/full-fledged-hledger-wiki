@@ -143,8 +143,8 @@ TRANSFER TO 12345678
 The final change is to make sure that automated conversion rules cover
 newly created year files. Modify `export.hs` to read:
 ```
-first   = 2014 :: Int
-current = 2017
+defaultFirstYear   = 2014 :: Int
+defaultCurrentYear = 2017
 ```
 
 Now, if you run `export.sh`, all new statements will be converted and
